@@ -38,7 +38,6 @@ class RoleController extends CrudController {
 		$helpMessage = \Lang::get('panel::fields.roleHelp');
 
 		$this->edit->label('Edit Role');
-		$this->edit->link("rapyd-demo/filter", "Role", "TR")->back();
 		$this->edit->add('name', 'Name', 'text')->rule('required');
 		$this->edit->add('label', 'Description', 'text')->rule('required');
 		$this->edit->add('permissions','Permissions','checkboxgroup')->options(Permission::pluck('name', 'id')->all());
