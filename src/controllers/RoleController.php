@@ -21,7 +21,7 @@ class RoleController extends CrudController {
 		$this->grid->add('id', 'ID', true)->style("width:100px");
 		$this->grid->add('name', 'Name')->style('width:100px');
 		$this->grid->add('label', 'Description');
-		$this->grid->add('{{ implode(", ", $permissions->lists("name")->all()) }}', 'name' );
+		$this->grid->add('{{ implode(", ", $permissions->pluck("name")->all()) }}', 'name' );
 
 
 		$this->addStylesToGrid();
