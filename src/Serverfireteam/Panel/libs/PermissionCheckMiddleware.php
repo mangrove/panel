@@ -17,13 +17,13 @@ class PermissionCheckMiddleware
      * @param  \Closure  $next
      * @return mixed
      */
-    
+
     protected $app;
     public function handle($request, Closure $next)
-    {   
+    {
 
         $admin= Admin::find((\Auth::guard('panel')->user()->id));
-        
+
         $urlSegments   = $request->segments();
 
         if ($admin->hasRole('super')){
@@ -41,7 +41,7 @@ class PermissionCheckMiddleware
                     /**
                      * Show Access denied page to User
                      */
-                    
+
                     abort(403);
                 }
             }
