@@ -1,24 +1,12 @@
 {
-    "name": "serverfireteam/panel",
+    "name": "mangrove/panel",
     "description": "Admin panel for Laravel applications",
     "keywords": ["LaravelPanel","Laravel", "Panel", "Crud", "Admin Panel","CMS","administrator", "admin", "backend"],
     "license": "MIT",
     "authors": [
         {
-            "name": "siavash",
-            "email": "siavash@serverfire.net"
-        },
-        {
-        "name": "Alireza Aboutalebi",
-        "email": "ali@serverfire.net"
-        },
-        {
-        "name": "Hamid Reza Salimian ",
-        "email": "hamid@salimian.me"
-        },
-        {
-        "name": "Alenoosh Baghoomian",
-        "email": "hope2end@gmail.com"
+        "name": "Mangrove",
+        "email": "servicedesk@mangrove.nl"
         }
     ],
     "require": {
