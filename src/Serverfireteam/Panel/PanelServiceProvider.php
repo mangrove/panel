@@ -27,10 +27,10 @@ class PanelServiceProvider extends ServiceProvider
 
     	// Barryvdh\Elfinder\ElfinderServiceProvider
         $this->app->register('Barryvdh\Elfinder\ElfinderServiceProvider');
-        
+
 
         $this->app['router']->middleware('PanelAuth', 'Serverfireteam\Panel\libs\AuthMiddleware');
-        
+
         //middleware Permission
         $this->app['router']->middleware(
             'PermissionPanel', 'Serverfireteam\Panel\libs\PermissionCheckMiddleware'
@@ -41,7 +41,7 @@ class PanelServiceProvider extends ServiceProvider
         \Config::set('auth.guards.panel',     ['driver'   => 'session','provider' => 'panel']);
         \Config::set('auth.providers.panel',  ['driver'   => 'eloquent','model'   => \Serverfireteam\Panel\Admin::class]);
         \Config::set('auth.passwords.panel',  ['provider' => 'panel','email'      => 'panelViews::resetPassword','table' => 'password_resets','expire' => 60]);
-        
+
         /*
          * Create aliases for the dependency.
          */
@@ -62,7 +62,7 @@ class PanelServiceProvider extends ServiceProvider
 
         $this->app['panel::createmodel'] = $this->app->share(function()
         {
-         $fileSystem = new Filesystem(); 
+         $fileSystem = new Filesystem();
 
          return new \Serverfireteam\Panel\Commands\CreateModelCommand($fileSystem);
      });
@@ -99,9 +99,9 @@ class PanelServiceProvider extends ServiceProvider
             ]);
 
         include __DIR__."/../../routes.php";
-
-        $this->loadTranslationsFrom(base_path() . '/vendor/serverfireteam/panel/src/lang', 'panel');
-        $this->loadTranslationsFrom(base_path() . '/vendor/serverfireteam/rapyd-laravel/lang', 'rapyd');
+        $this->loadMigrationsFrom(base_path() . '/vendor/mangrove/panel/src/database/migrations');
+        $this->loadTranslationsFrom(base_path() . '/vendor/mangrove/panel/src/lang', 'panel');
+        $this->loadTranslationsFrom(base_path() . '/vendor/mangrove/rapyd-laravel/lang', 'rapyd');
 
         AliasLoader::getInstance()->alias('Serverfireteam', 'Serverfireteam\Panel\Serverfireteam');
 
