@@ -16,6 +16,14 @@ class EditUrlTable extends Migration {
             {
                 $table->boolean('main')->nullable();
             });
+
+            $link = Serverfireteam\Panel\Link::where(array(
+                'display' => 'Links',
+                'url' =>  'Link',
+            ))->first();
+
+            $link->main = 1;
+            $link->save();
 	}
 
 	/**
@@ -24,7 +32,7 @@ class EditUrlTable extends Migration {
 	 * @return void
 	 */
 	public function down()
-	{	
+	{
 
 	}
 
