@@ -5,13 +5,13 @@ use Symfony\Component\Console\Input\InputOption;
 
 class CreateControllerPanelCommand extends GeneratorCommand {
 
-	/**	
+	/**
 	 *
 	 * @var string contains the command name
 	 */
 	protected $name = 'panel:createcontroller';
 
-	/**	
+	/**
 	 *
 	 * @var string contains the description of command
 	 */
@@ -36,7 +36,7 @@ class CreateControllerPanelCommand extends GeneratorCommand {
                     return __DIR__.'/stubs/controller.plain.stub';
             }
 
-            return base_path().'/vendor/serverfireteam/panel/src/Serverfireteam/Panel/stubs/panelController.stub';
+            return base_path().'/vendor/mangrove/panel/src/Serverfireteam/Panel/stubs/panelController.stub';
 	}
 
 	/**
@@ -50,11 +50,11 @@ class CreateControllerPanelCommand extends GeneratorCommand {
             $controllersPath = \Config::get('panel.controllers');
             if ( isset($controllersPath) && $controllersPath != NULL  ){
                 return $controllersPath;
-            } else {                
+            } else {
                 return $rootNamespace.'\Http\Controllers';
-            }            
+            }
 	}
-        
+
         /**
 	 * Execute the console command.
 	 *

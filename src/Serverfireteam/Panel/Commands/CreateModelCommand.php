@@ -10,10 +10,10 @@ class CreateModelCommand extends GeneratorCommand {
 	 * @var string the console command name
 	 */
 	protected $name = 'panel:createmodel';
-        
-       
 
-	/**	 
+
+
+	/**
 	 *
 	 * @var string the console command dscription
 	 */
@@ -33,7 +33,7 @@ class CreateModelCommand extends GeneratorCommand {
 	 */
 	protected function getStub()
 	{
-		return base_path().'/vendor/serverfireteam/panel/src/Serverfireteam/Panel/stubs/model.stub';
+		return base_path().'/vendor/mangrove/panel/src/Serverfireteam/Panel/stubs/model.stub';
 	}
 
 	/**
